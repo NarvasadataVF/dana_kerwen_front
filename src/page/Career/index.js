@@ -1,10 +1,12 @@
 import React from 'react'
+import Vacancies from '../../container/Vacancies'
 import './css.css'
 
 const Career = () => {
   return (
-    <div className='workInProgress'>
-        <h1>WORK IN PROGRESS</h1>
+    <div>
+        <Vacancies />
+        {/* <h1>WORK IN PROGRESS</h1> */}
     </div>
   )
 }

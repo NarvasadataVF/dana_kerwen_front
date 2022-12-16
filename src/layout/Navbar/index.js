@@ -5,8 +5,7 @@ import {MenuLine1,
         Closelineleft, 
         Closelineright, 
         MenuLine2, 
-        MenuLine3,
-        Localeicon } from '../../assets/img/svg/icons'
+        MenuLine3,} from '../../assets/img/svg/icons'
 import { Link } from 'react-router-dom'
 import { useLocation } from 'react-router-dom'
 import { useNavigate } from 'react-router-dom'
@@ -16,7 +15,7 @@ import logo from './../../assets/img/logo.png'
 const Navbar = () => {
   const {pathname} = useLocation()
   const [opened, setOpened] = useState(false)
-  const langRef = useRef()
+//   const langRef = useRef()
   const navRef = useRef()
   const logoRef = useRef()
   const logoNameRef = useRef()
@@ -25,10 +24,10 @@ const Navbar = () => {
   const [isActive, setIsActive] = useState(false)
   const navigate = useNavigate()
 
-  const openLang = () => {
-    const lang = langRef.current
-    lang.classList.toggle('langActive')
-  }
+//   const openLang = () => {
+//     const lang = langRef.current
+//     lang.classList.toggle('langActive')
+//   }
 
     // useEffect(()=>{
     //     window.addEventListener('scroll', ()=>{
@@ -63,7 +62,6 @@ const Navbar = () => {
             nav.style.borderBottom = "none"
         }
         isActive ? j = null : logo.classList.remove("activeLogo")
-        // eslint-disable-next-line no-unused-vars
         isActive ? j = null : logoName.classList.remove('activeLogoSize')
     }, [pathname])
 

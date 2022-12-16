@@ -1,0 +1,19 @@
+.vacancyComponent{
+    display: flex;
+    border: 1px solid var(--green);
+    border-radius: 6px;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 20px;
+    box-sizing: border-box;
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 15px;
+    cursor: pointer;
+    transition: 0.4s;
+}
+.vacancyComponent:hover{
+    transition: 0.4s;
+    border: 2px solid var(--green);
+    
+}

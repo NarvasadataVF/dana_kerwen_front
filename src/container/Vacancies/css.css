@@ -1,0 +1,24 @@
+.vacancy{
+    padding: 100px 0px;
+    padding-top: 140px;
+}
+.vacancy>div{
+    display: flex;
+    flex-direction: column;
+}
+.vacancy>div>div{
+    display: flex;
+}
+.vacancy>div>div>div{
+    flex: 1;
+}
+.vacancy>div>div>div>h1{
+    font-weight: normal;
+    font-size: 60px;
+    color: var(--green);
+    margin-bottom: 0px;
+}
+.vacancy>div>div>div>p{
+    max-width: 90%;
+    margin-top: 5px;
+}
