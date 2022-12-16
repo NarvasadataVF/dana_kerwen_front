@@ -1,0 +1,12 @@
+.experienceRadial{
+    height: 150px;
+    width: 150px;
+    transition: 0.5s;
+}
+.experienceRadial svg{
+    transition: 0.5s;
+}
+.experienceRadial>h2{
+    font-size: 18px;
+    text-align: center;
+}

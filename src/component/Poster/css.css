@@ -1,0 +1,113 @@
+.posterContainer{
+    /* margin-top: -100px; */
+}
+.poster{
+    /* height: 100vh; */
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+.posterImg{
+    height: 100vh;
+    overflow: hidden;
+    position: relative;
+
+}
+/* .posterImg::before{
+    content: " ";
+    position: absolute;
+    left: 0px;
+    height: 100%;
+    width: 100%;
+    background: linear-gradient(70deg, rgb(47, 140, 86) 0%, rgba(91, 205, 139, 0.418) 24%, rgba(1,0,10,1) 95%);
+    opacity: 0.8;
+}
+*/
+.posterImg::after{
+    content: " ";
+    position: absolute;
+    z-index: -1;
+    right: 0px;
+    height: 100%;
+    bottom: 0px;
+    width: 100%;
+    background: linear-gradient(-90deg, rgba(18, 18, 18, 0.384) 0%, #0f0f0f 100%);
+    opacity: 0.8;
+} 
+
+.posterImg>img{
+    width: 100%;
+    z-index: -1;
+    height: 100vh!important;
+    position: absolute;
+    top: 0px;
+}
+.sliderHolder{
+    /* max-width: 1680px; */
+    margin: auto;
+    position: relative;
+    z-index: 5;
+}
+.panel>ul{
+    display: flex;
+    flex-wrap: nowrap;
+    margin: 0px;
+    padding: 0px;
+    list-style: none;
+    justify-content: center;
+}
+.panel>ul>li{
+    margin-right: 30px;
+    box-sizing: border-box;
+    border-radius: 8px;
+    backdrop-filter: blur(7px);
+    border: 1px solid #427c5a8a;
+    color: #f9f9f9;
+    display: flex;
+    flex-direction: column;
+    height: 320px;
+    width: 400px;
+    overflow: hidden;
+    cursor: pointer;
+}
+.panel>ul>li>div:first-child{
+    position: relative;
+    height: 150px;
+    overflow: hidden;
+}
+.panel>ul>li>div:last-child{
+    padding: 5px;
+}
+.posterContent{
+    z-index: 5;
+    height: 100%;
+    display: flex;
+    color: #fff;
+    align-items: center;
+    width: 100%;
+    max-width: 1200px;
+    margin: auto;
+    font-weight: 300;
+}
+.posterContent>div{
+    flex: 1;
+}
+.posterContent>div>h1{
+    margin-bottom: 0px;
+    font-size: 60px;
+}
+.posterContent>div>h1>span{
+    color: var(--green);
+}
+.posterContent>div>p{
+    margin-top: 10px;
+}
+.posterContent>div>button{
+    width: 50%;
+    height: 50px;
+    background-color: var(--green);
+    border: none;
+    color: white;
+    border-radius: 6px;
+}

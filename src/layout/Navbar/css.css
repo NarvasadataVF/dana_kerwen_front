@@ -1,0 +1,706 @@
+.navbarContainer{
+    width: 100%;
+    position: relative;
+    z-index: 20;
+}
+.navbarContainer>div{
+    position: fixed;
+    width: 100%;
+    background-color: #121212;
+    top: 0px;
+}
+.navbar{
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    user-select: none;
+    transition: 0.5s;
+    color: #F9f9f9;
+    margin: auto;
+    max-width: 1200px;
+}
+.navbar>div{
+    flex: 1;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    box-sizing: border-box;
+}
+.navbarLogo{
+    display: flex;
+}
+.navbarLogo>div:first-child{
+    margin-left: 20px;
+    z-index: 3;
+}
+.navbarLogo>div>img{
+    width: 80px;
+    /* margin-top: -20px; */
+}
+.navbarLogo>div{
+    width: 5px;
+    height: 75px;
+    position: relative;
+    transition: 0.25s;
+    opacity: 1;
+    cursor: pointer;
+}
+.navbarLogo>div>img{
+    transition: 0.4s;
+}
+.navbarControl{
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+}
+.navbarMenu>div{
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    cursor: pointer;
+    position: relative;
+}
+@keyframes menuTop {
+    0%{
+        transform: translate(0px, 10px);
+    }
+    100%{
+        transform: translate(0px, 0px);
+    }
+}
+@keyframes menuBottom {
+    0%{
+        transform: translate(0px, -10px);
+    }
+    100%{
+        transform: translate(0px, 0px);
+    }
+}
+.navbarMenu>div>svg:nth-child(1){
+    position: absolute;
+}
+.navbarMenu>div>svg:nth-child(3){
+    position: absolute;
+}
+.animatedMenu>svg:nth-child(1){
+    position: absolute;
+    animation-name: menuTop;
+    animation-fill-mode: forwards;
+    animation-duration: 0.5s;
+    animation-iteration-count: 1;
+    animation-delay: 0.07s;
+    transform: translate(0px, 10px);
+}
+.animatedMenu>svg:nth-child(3){
+    position: absolute;
+    transform: translate(0px, -10px);
+    animation-name: menuBottom;
+    animation-fill-mode: forwards;
+    animation-duration: 0.5s;
+    animation-delay: 0.07s;
+    animation-iteration-count: 1;
+}
+.animatedMenu::after{
+    content: "Menu";
+    position: absolute;
+    display: flex;
+    align-items: center;
+    left: 135%;
+    transition: 0.25s;
+    height: 100%;
+    width: 100%;
+    opacity: 0;
+    animation-name: opacityAnim2;
+    animation-duration: 0.5s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards
+}
+.navbarMenu>div>span{
+    margin-left: 10px;
+    transition: 0.5s;
+}
+.navbarLocale{
+    margin-top: 0px;
+    padding-right: 20px;
+    cursor: pointer;
+    position: relative;
+}
+.navbarLocale>div{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    position: relative;
+    border-radius: 4px;
+    padding: 5px;
+    box-sizing: border-box;
+    border: 1px solid rgb(209, 209, 209);
+    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 0px;
+}
+.navbarLocale>div>div>span{
+    margin-right: 5px;
+    text-transform: uppercase;
+}
+.navbarLocale>div>ul{
+    position: absolute;    
+    border-radius: 4px;
+    margin-top: 0px;
+    border-top-left-radius: 0px;
+    border-top-right-radius: 0px;
+    list-style: none;
+    transition: 0.25s;
+    padding: 0px;
+    border: 1px solid rgb(209, 209, 209);
+    overflow: hidden;
+    z-index: 3;
+    top: 100%;
+    opacity: 0;
+    width: 90.5%;
+}
+.navbarLocale>div>ul>li{
+    padding-bottom: 5px;
+    position: relative;
+    font-size: 14px;
+    display: flex;
+    text-transform: uppercase;
+    padding-left: 7px;
+    cursor: pointer;
+    transition: 0.25s;
+    padding-top: 2.5px;
+    padding-bottom: 2.5px;
+}
+.navbarLocale>div>ul>li:last-child{
+    border: none;
+}
+.navbarLocale>div>ul>li:hover{
+    transition: 0.25s;
+    color: #43ac3c;
+}
+
+.langActive{
+    padding: 2px!important; 
+    transition: 0.25s;
+    opacity: 1!important;
+}
+
+.openedNavbar{
+    display: flex;
+    flex-wrap: nowrap;
+    transition: 0.35s;
+    height: 0px;
+    overflow: hidden;
+    position: relative;
+    border-bottom: none;
+    background-color: #121212;
+    color: #F9f9f9;
+}
+.openedNavbar>div{
+    flex: 1;
+    overflow: hidden;
+}
+.openedNavbar>div>ul{
+    margin: 0px;
+    padding: 0px;
+    list-style: none;
+}
+.openedNavbar>div>ul>li{
+    margin-bottom: 20px;
+    font-size: 25px;
+    font-weight: normal;
+    transition: 0.25s;
+    cursor: pointer;
+}
+.openedNavbar>div>ul>li>a:hover{
+    transition: 0.25s;
+    color: #43ac3c!important;
+}
+.openedNavbar>div>ul>li>a{
+    text-decoration: none;
+    color: inherit;
+}
+.openedNavbarText{
+    margin-bottom: 20px;
+    position: relative;
+}
+.openedNavbarText>svg{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    z-index: -1;
+    transition: 0.25s;
+    opacity: 0;
+    top: 0px;
+    right: 0px;
+}
+.openedNavbarText>div{
+    display: flex;
+    height: 100%;
+    justify-content: flex-start;
+    align-items: flex-end;
+    padding-left: 20px;
+    transition: 0.5s;
+
+}
+.openedNavbarText>div:hover{
+    transform: translate(0px, -5px);
+    transition: 0.5s;
+}
+
+.openedNavbarText>div>a{
+    text-decoration: none;
+    font-size: 30px;
+}
+.langNtheme{
+    display: flex;
+    flex-wrap: nowrap;
+}
+
+.activeLogo{
+    transition: 1s;
+    transform: translate(-150px);
+    opacity: 0!important;
+}
+.activeLogo>img{
+    width: 230px;
+}
+.activeLogoSize>img{
+    width: 300px!important;
+    transition: 0.7s!important;
+    margin-top: 50px;
+}
+.activeNavbar{
+    height: 280px;
+    transition: .5s;
+}
+.activeNavbar>div>img{
+    opacity: 1;
+    transition: 0.45s;
+}
+.navCloseIcon{
+    position: relative;
+    margin-left: -24px;
+    margin-top: 3px;
+    opacity: 0;
+    transition: 0.25s;
+}
+.navCloseIcon>svg:last-child{
+    position: absolute;
+    left: 0px;
+}
+@keyframes closeAnimOne {
+    0%{
+        transform: translate(-30px, 30px);
+        opacity: 0;
+    }
+    100%{
+        transform: translate(0px, 0px);
+        opacity: 1;
+    }
+}
+@keyframes closeAnimTwo {
+    0%{
+        transform: translate(30px, 30px);
+        opacity: 0;
+    }
+    100%{
+        transform: translate(0px, 0px);
+        opacity: 1;
+    }
+}
+
+.opacityNone>svg{
+    opacity: 0;
+    transition: 0.25s;
+}
+
+.opacityBlock{
+    opacity: 1;
+    transition: 0.25s;
+}
+@keyframes opacityAnim {
+    0%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+}
+@keyframes opacityAnim2 {
+    0%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+}
+.menuNameClass::after{
+    content: "Close";
+    position: absolute;
+    display: flex;
+    align-items: center;
+    left: 135%;
+    transition: 0.5s;
+    height: 100%;
+    opacity: 0;
+    width: 100%;
+    animation-name: opacityAnim;
+    animation-duration: 0.5s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+}
+.opacityBlock>svg:first-child{
+    animation-name: closeAnimOne;
+    animation-duration: 0.5s;
+    animation-fill-mode: forwards;
+    animation-iteration-count: 1;
+}
+
+.opacityBlock>svg:last-child{
+    position: absolute;
+    left: 0px;
+    animation-name: closeAnimTwo;
+    animation-duration: 0.5s;
+    animation-fill-mode: forwards;
+    animation-iteration-count: 1;
+}
+
+
+
+/* TABLET */
+
+@media (max-width: 1180px) {
+    .navbarContainer{
+        /* margin: auto; */
+        width: 100%;
+        position: relative;
+        z-index: 20;
+    }
+    .navbarContainer>div{
+        position: absolute;
+        width: 100%;
+        width: 100%;
+        top: 0px;
+    }
+    .navbar{
+        display: flex;
+        flex-wrap: nowrap;
+        /* background-color: white;
+        color: #151515; */
+        align-items: center;
+        user-select: none;
+        transition: 0.5s;
+    }
+    .navbar>div{
+        flex: 1;
+        padding-top: 10px;
+        box-sizing: border-box;
+    }
+    .navbarLogo{
+        display: flex;
+    }
+    .navbarLogo>div:first-child{
+        margin-left: 10px;
+        z-index: 3;
+    }
+    .navbarLogo>div{
+        width: 5px;
+        height: auto;
+        position: relative;
+        transition: 0.25s;
+        opacity: 1;
+    }
+    .navbarLogo>div>svg{
+        transition: 0.5s;
+        width: 200px;
+    }
+    .navbarControl{
+        display: flex;
+        flex-wrap: nowrap;
+        justify-content: flex-end;
+        padding-top: 0px!important;
+    }
+    .navbarMenu{
+        margin-right: 10px;
+        transition: 0.5s;
+    }
+    .navbarMenu>div>span{
+        margin-left: 10px;
+        transition: 0.5s;
+    }
+    .navbarLocale{
+        margin-top: 0px;
+        padding-right: 20px;
+        cursor: pointer;
+        position: relative;
+    }
+    .navbarLocale>div{
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        position: relative;
+        border-radius: 4px;
+        padding: 4px;
+        font-size: 10px;
+        box-sizing: border-box;
+        border: none;
+        border-bottom-left-radius: 0px;
+        border-bottom-right-radius: 0px;
+    }
+    .navbarLocale>div>div{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .navbarLocale>div>div>svg{
+        width: 10px;
+    }
+    .navbarLocale>div>div>span{
+        margin-right: 5px;
+        text-transform: uppercase;
+    }
+    .navbarLocale>div>ul{
+        position: absolute;    
+        border-radius: 4px;
+        margin-top: 0px;
+        border-top-left-radius: 0px;
+        border-top-right-radius: 0px;
+        list-style: none;
+        transition: 0.25s;
+        padding: 0px;
+        border: 1px solid rgb(209, 209, 209);
+        overflow: hidden;
+        z-index: 3;
+        top: 100%;
+        opacity: 0;
+        width: 90.5%;
+    }
+    .navbarLocale>div>ul>li{
+        position: relative;
+        font-size: 10px;
+        display: flex;
+        text-transform: uppercase;
+        padding-left: 7px;
+        cursor: pointer;
+        transition: 0.25s;
+        padding-top: 2.5px;
+        padding-bottom: 2.5px;
+    }
+    
+    .langActive{
+        padding: 0px!important; 
+        transition: 0.25s;
+        opacity: 1!important;
+    }
+    
+
+    .animatedMenu>svg:nth-child(1){
+        position: absolute;
+        animation-name: menuTop;
+        animation-fill-mode: forwards;
+        animation-duration: 0.5s;
+        animation-iteration-count: 1;
+        animation-delay: 0.07s;
+        transform: translate(0px, 10px);
+    }
+    .animatedMenu>svg:nth-child(3){
+        position: absolute;
+        transform: translate(0px, -10px);
+        animation-name: menuBottom;
+        animation-fill-mode: forwards;
+        animation-duration: 0.5s;
+        animation-delay: 0.07s;
+        animation-iteration-count: 1;
+    }
+    .animatedMenu::after{
+        content: "Menu";
+        position: absolute;
+        display: flex;
+        align-items: center;
+        left: -200%!important;
+        transition: 0.25s;
+        height: 100%;
+        width: 100%;
+        opacity: 0;
+        animation-name: opacityAnim2;
+        animation-duration: 0.5s;
+        animation-iteration-count: 1;
+        animation-fill-mode: forwards
+    }
+
+
+
+    .openedNavbar{
+        display: flex;
+        flex-wrap: nowrap;
+        transition: 0.35s;
+        height: 0px;
+        overflow: hidden;
+        position: relative;
+        border-bottom: none;
+    }
+    .openedNavbar>div{
+        flex: 1;
+        overflow: hidden;
+    }
+    .openedNavbar>div>ul{
+        margin: 0px;
+        padding: 0px;
+        list-style: none;
+    }
+    .openedNavbar>div>ul>li{
+        margin-bottom: 15px;
+        font-size: 21px;
+        font-weight: normal;
+        transition: 0.25s;
+        cursor: pointer;
+        text-align: right;
+        margin-right: 10px;
+    }
+    .openedNavbar>div>ul>li:hover{
+        transition: 0.25s;
+        color: #43ac3c!important;
+    }
+    .openedNavbarText{
+        margin-bottom: 50px;
+        position: relative;
+    }
+    .openedNavbarText>svg{
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        z-index: -1;
+        transition: 0.25s;
+        opacity: 0;
+        top: 0px;
+        right: 0px;
+    }
+    .openedNavbarText>div{
+        display: flex;
+        height: 100%;
+        justify-content: flex-end;
+        align-items: flex-end;
+        padding-left: 10px;
+    }
+    .openedNavbarText>div>a{
+        color: #43ac3c;
+        font-size: 18px;
+        display: none;
+    }
+    .langNtheme{
+        display: flex;
+        flex-wrap: nowrap;
+    }
+    
+    .activeLogo{
+        transition: 1s;
+        transform: translate(-100px);
+        opacity: 0!important;
+    }
+    .activeLogo>svg{
+        width: 180px!important;
+    }
+    .activeLogoSize>svg{
+        width: 180px!important;
+        transition: 0.5s;
+    }
+    .activeNavbar{
+        height: 180px;
+        transition: .5s;
+    }
+    .activeNavbar>div>svg{
+        opacity: 1;
+        transition: 0.25s;
+    }
+    .navCloseIcon{
+        position: relative;
+        margin-left: -24px;
+        margin-top: 3px;
+        opacity: 0;
+        transition: 0.25s;
+    }
+    .navCloseIcon>svg:last-child{
+        position: absolute;
+        left: 0px;
+    }
+    @keyframes closeAnimOne {
+        0%{
+            transform: translate(-30px, 30px);
+            opacity: 0;
+        }
+        100%{
+            transform: translate(0px, 0px);
+            opacity: 1;
+        }
+    }
+    @keyframes closeAnimTwo {
+        0%{
+            transform: translate(30px, 30px);
+            opacity: 0;
+        }
+        100%{
+            transform: translate(0px, 0px);
+            opacity: 1;
+        }
+    }
+    
+    .opacityNone>svg{
+        opacity: 0;
+        transition: 0.25s;
+    }
+    
+    .opacityBlock{
+        opacity: 1;
+        transition: 0.25s;
+    }
+    @keyframes opacityAnim {
+        0%{
+            opacity: 0;
+        }
+        100%{
+            opacity: 1;
+        }
+    }
+    @keyframes opacityAnim2 {
+        0%{
+            opacity: 0;
+        }
+        100%{
+            opacity: 1;
+        }
+    }
+    .menuNameClass::after{
+        content: "Close";
+        position: absolute;
+        display: flex;
+        align-items: center;
+        left: -200%;
+        transition: 0.5s;
+        height: 100%;
+        opacity: 0;
+        width: 100%;
+        animation-name: opacityAnim;
+        animation-duration: 0.5s;
+        animation-iteration-count: 1;
+        animation-fill-mode: forwards;
+    }
+    .opacityBlock>svg:first-child{
+        animation-name: closeAnimOne;
+        animation-duration: 0.5s;
+        animation-fill-mode: forwards;
+        animation-iteration-count: 1;
+    }
+    
+    .opacityBlock>svg:last-child{
+        position: absolute;
+        left: 0px;
+        animation-name: closeAnimTwo;
+        animation-duration: 0.5s;
+        animation-fill-mode: forwards;
+        animation-iteration-count: 1;
+    }
+
+    .langNthemeSpecial{
+        flex-direction: row-reverse!important;
+    }
+
+
+}

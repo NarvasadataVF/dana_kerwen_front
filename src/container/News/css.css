@@ -1,0 +1,37 @@
+.news{
+    background-image: linear-gradient(360deg,#151515 0,#202020 80%);
+    color: var(--white);
+    padding: 120px 0px;
+    padding-top: 100px;
+}
+.news>div>h1{
+    font-size: 55px;
+    text-align: center;
+    margin-bottom: 60px;
+}
+.news>div>button{
+    display: flex;
+    justify-self: center;
+    margin: auto;
+    margin-top: 100px;
+}
+.slick-dots{
+    bottom: -60px;
+}
+.slick-dots>li>button{
+    width: 10px;
+    height: 10px;
+}  
+.slick-dots>li>button::before{
+    color: transparent;
+    background-color: white;
+    transition: 0.3s;
+    border-radius: 50%;
+    width: 10px;
+    height: 10px;
+}
+.slick-active>button::before{
+    background-color: var(--green)!important;
+    transition: 0.3s;
+    color: transparent!important;
+}

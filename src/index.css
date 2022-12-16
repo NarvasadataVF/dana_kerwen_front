@@ -1,0 +1,72 @@
+@font-face {
+  font-family: majorant;
+  src: url(./assets/fonts/Majorant-Bd.ttf);
+  font-weight: 600;
+}
+
+@font-face {
+  font-family: majorant;
+  src: url(./assets/fonts/Majorant-Rg.ttf);
+  font-weight: 400;
+}
+@font-face {
+  font-family: majorant;
+  src: url(./assets/fonts/Majorant-Lt.ttf);
+  font-weight: 300;
+}
+@font-face {
+  font-family: majorant;
+  src: url(./assets/fonts/Majorant-Th.ttf);
+  font-weight: 200;
+}
+
+
+:root{
+  --green: #28a745;
+  --white: #fff; 
+  --darkBg: #121212;
+  --bg: #202020;
+}
+body {
+  margin: 0;
+  font-family: majorant, Arial, Helvetica, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+html{
+  scroll-behavior: smooth;
+}
+
+.ContainerXl>div:first-child{
+  max-width: 1200px!important;
+  margin: auto;
+}
+
+.dklButton{
+  background-color: transparent;
+  transition: 0.4s;
+  border: 1px solid var(--green);
+  border-radius: 6px;
+  color: var(--green);
+  font-size: 21px;
+  padding: 20px 40px;
+  display: flex;
+  justify-content: center;
+  cursor: pointer;
+  align-items: center;
+}
+.dklButton:hover{
+  transition: 0.4s;
+  color: var(--white);
+  background-color: var(--green);
+}
+.workInProgress{
+  padding-top: 100px;
+  text-align: center;
+}

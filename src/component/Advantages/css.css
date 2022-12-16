@@ -1,0 +1,30 @@
+.advantages{
+    display: flex;
+    flex-direction: column;
+    padding-top: 100px;
+}
+.advantages>div{
+    display: flex;
+    margin-bottom: 50px;
+}
+.advantages>div>div{
+    flex: 1;
+}
+.advantages>div>div>div{
+    max-width: 90%
+}
+.advantages>div>div>div>h3{
+    color: var(--green);
+}
+.advantages>div>div>div>ul{
+    list-style-type: disc;
+    list-style-type: " — ";
+    margin: 0px;
+    font-size: 14px;
+    padding: 0px;
+    padding-left: 18px;
+}
+.advantages>div>div>div>ul>li{
+    margin-bottom: 5px;
+    color: #acacac;
+}

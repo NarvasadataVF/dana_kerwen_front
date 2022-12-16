@@ -1,0 +1,10 @@
+.newsHeader{
+    background-color: var(--darkBg);
+    color: var(--white);
+    padding-top: 120px;
+    padding-bottom: 15px;
+}
+.newsHeader>div>h1{
+    font-size: 60px;
+    font-weight: normal;
+}

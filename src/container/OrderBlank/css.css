@@ -1,0 +1,91 @@
+.orderBlank{
+    background-image: url(./../../assets//img//OrderBlank.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: relative;
+    padding: 30px 0px;
+}
+.orderBlank::before{
+    background-color: rgba(0, 0, 0, 0.800);
+    content: " ";
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+.orderBlank>div{
+    display: flex;
+    padding: 50px 0px;
+    z-index: 5;
+    position: relative;
+    flex-direction: column;
+    align-items: center;
+    color: var(--white);
+}
+.orderBlank>div>div{
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+}
+/* .orderBlank>div>div>button{
+    width: 200px;
+    padding: 10px 0px;
+    background-color: transparent;
+    transition: 0.5s;
+    color: var(--white);    
+    border: 1px solid var(--green);
+    border-radius: 6px;
+    font-size: 18px;
+    cursor: pointer;
+}
+.orderBlank>div>div>button:hover{
+    background-color: var(--green);
+    transition: 0.5s;
+} */
+.orderText{
+    text-align: center;
+    margin-bottom: 50px;
+}
+.orderText>h1{
+    margin-bottom: 0px;
+    margin-top: 0px;
+    font-size: 50px;
+}
+.orderText>p{
+    max-width: 500px;
+    color: #acacac;
+    font-size: 14px;
+    /* margin: auto; */
+}
+.orderBlank>div>div>div{
+    /* margin: auto; */
+    margin-bottom: 25px;
+    width: 50%;
+}
+.orderBlank>div>div>div>input{
+    background-color: transparent;
+    width: 100%;
+    outline: none;
+    padding: 5px;
+    color: var(--white);
+    border: none;
+    border-bottom: 1px solid white;
+}
+.orderBlank>div>div>div>input::placeholder{
+    color: white;
+}
+.orderBlank>div>div>div>select{
+    background-color: transparent;
+    width: 100%;
+    outline: none;
+    padding: 5px;
+    padding-right: 0px;
+    color: var(--white);
+    border: none;
+    border-bottom: 1px solid white;
+}

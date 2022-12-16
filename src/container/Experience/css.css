@@ -1,0 +1,14 @@
+.experience{
+    background-image: linear-gradient(180deg,var(--darkBg) 10%,var(--bg) 60%);
+    color: var(--white);
+    padding: 50px 0px;
+    padding-top: 100px;
+
+}
+.radialHolder{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 50px 0px;
+    margin-bottom: 300px;
+}

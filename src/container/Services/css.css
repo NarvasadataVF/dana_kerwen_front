@@ -1,0 +1,11 @@
+.servicePalletHolder{
+    width: 100%;
+    background-color: var(--darkBg);
+    padding: 0px;
+    margin: 0px;
+    margin-top: -10px;
+}
+.servicePalletHolder>div:first-child{
+    justify-content: space-between;
+    display: flex;
+}
