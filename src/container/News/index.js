@@ -1,14 +1,16 @@
-import React from 'react'
+import React, { useMemo } from 'react'
 import NewsComponent from '../../component/NewsComponent'
 import "slick-carousel/slick/slick.css"; 
 import "slick-carousel/slick/slick-theme.css";
 import Slider from 'react-slick';
 import './css.css'
 import { useNavigate } from 'react-router-dom';
+import useNews from './../../utils/hook/useNews'
 
 const News = () => {
 
     const navigate = useNavigate()
+    const [news] = useNews()
 
     const settings = {
         dots: true,
@@ -21,19 +23,23 @@ const News = () => {
         slidesToScroll: 1
       };
 
-  return (
+    const renderNews = useMemo(()=>{
+        const slicedNews = news && news.slice(0, 5);
+        return slicedNews && slicedNews.map((elem, i)=>{
+            return(
+                <div key={i}>
+                    <NewsComponent color="#fff" date={elem.news.date} text={elem.title}/>
+                </div> 
+            )
+        })
+    }, [news])
+
+  return ( 
     <div className='ContainerXl news'>
         <div>
             <h1>Новости и события</h1>
             <Slider {...settings}>
-                <NewsComponent date="24 jan 2022" text="Anim fugiat et veniam exercitation ea ullamco adipisicing elit ea pariatur anim excepteur pariatur non."/>
-                <NewsComponent date="24 jan 2022" text="Do fugiat sunt consequat mollit fugiat cupidatat cillum adipisicing exercitation non magna."/>
-                <NewsComponent date="24 jan 2022" text="Sunt ut sit nisi amet ad excepteur ipsum adipisicing minim nulla laborum."/>
-                <NewsComponent date="24 jan 2022" text="Adipisicing nisi ipsum voluptate id."/>
-                <NewsComponent date="24 jan 2022" text="Mollit veniam sit ipsum occaecat nisi ullamco et anim est proident adipisicing ullamco quis."/>
-                <NewsComponent date="24 jan 2022" text="Esse culpa laboris labore deserunt."/>
-                <NewsComponent date="24 jan 2022" text="Anim dolore amet consectetur sunt ad."/>
-                <NewsComponent date="24 jan 2022" text="Duis esse do mollit consectetur nisi anim cillum nulla pariatur ea do non in."/>
+                {renderNews}
             </Slider>
             <button className='dklButton' onClick={()=>{navigate('/news')}}>Все публикации</button>
         </div>

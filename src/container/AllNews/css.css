@@ -1,0 +1,9 @@
+.newsHub{
+    display: flex;
+    flex-wrap: wrap;
+    padding: 50px 0px;
+}
+.newsWrapper{
+    max-width: 350px;
+    width: 350px;
+}

@@ -8,6 +8,7 @@ import Home from "./page/Home";
 import Logisctics from "./page/Logistics";
 import Career from "./page/Career";
 import News from "./page/News";
+import CurrentNews from "./page/CurrentNews";
 
 function App() {
   return (
@@ -21,6 +22,9 @@ function App() {
             <Route exact path="/Services/logistics" element={<Logisctics />}/>
             <Route exact path="/Career" element={<Career />}/>
             <Route exact path="/Contacts" element={<Contacts />}/>
+
+            {/* Router with Params */}
+            <Route exact path="/news/:itemId" element={<CurrentNews />}/>          
           </Routes>
         <Footer />
       </BrowserRouter>
