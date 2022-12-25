@@ -5,17 +5,20 @@ import {MenuLine1,
         Closelineleft, 
         Closelineright, 
         MenuLine2, 
-        MenuLine3,} from '../../assets/img/svg/icons'
+        MenuLine3,
+        Localeicon,
+    } from '../../assets/img/svg/icons'
 import { Link } from 'react-router-dom'
 import { useLocation } from 'react-router-dom'
 import { useNavigate } from 'react-router-dom'
 import logo from './../../assets/img/logo.png'
+import { useTranslation } from "react-i18next";
 
 
 const Navbar = () => {
   const {pathname} = useLocation()
   const [opened, setOpened] = useState(false)
-//   const langRef = useRef()
+  const langRef = useRef()
   const navRef = useRef()
   const logoRef = useRef()
   const logoNameRef = useRef()
@@ -23,11 +26,19 @@ const Navbar = () => {
   const closeRef = useRef()
   const [isActive, setIsActive] = useState(false)
   const navigate = useNavigate()
+  const [currentLang, setCurrentLang] = useState('En')
 
-//   const openLang = () => {
-//     const lang = langRef.current
-//     lang.classList.toggle('langActive')
-//   }
+  const { t, i18n } = useTranslation();
+
+
+  const openLang = () => {
+    const lang = langRef.current
+    lang.classList.toggle('langActive')
+  }
+
+  useEffect(()=>{
+    setCurrentLang(localStorage.getItem('DKLang') ? localStorage.getItem('DKLang') : "En")
+  }, [])
 
     // useEffect(()=>{
     //     window.addEventListener('scroll', ()=>{
@@ -65,6 +76,8 @@ const Navbar = () => {
         isActive ? j = null : logoName.classList.remove('activeLogoSize')
     }, [pathname])
 
+    
+
 
   const openNav = () => { 
     let j = null
@@ -86,7 +99,13 @@ const Navbar = () => {
     }
     isActive ?  j = null : logo.classList.toggle("activeLogo")
     isActive ?  j = null : logoName.classList.toggle('activeLogoSize')
+  }
 
+  const changeLanguageHandler = (e) => {
+    const languageValue = e
+    i18n.changeLanguage(languageValue);
+    localStorage.setItem("DKLang", languageValue)
+    setCurrentLang(languageValue)
   }
 
   return (
@@ -114,20 +133,19 @@ const Navbar = () => {
                         </div>
                     </div>
                     <div className='langNtheme pcOnly'>
-                        {/* <div className='navbarLocale' onClick={openLang}>
+                        <div className='navbarLocale' onClick={openLang}>
                              <div>
                                 <div>
-                                    <span>Ru</span>
+                                    <span>{currentLang}</span>
                                     <Localeicon />
                                 </div>
-                                <ul ref={langRef} >
-                                <li>Ru</li>
-                                <li>Tm</li>                                        
-                                <li>En</li>                                        
+                            <ul ref={langRef} >
+                                <li onClick={()=>{changeLanguageHandler('ru')}}>Ru</li>
+                                <li onClick={()=>{changeLanguageHandler('tm')}}>Tm</li>                                        
+                                <li onClick={()=>{changeLanguageHandler('en')}}>En</li>                                        
                             </ul>
-                            </div> 
-                            
-                        </div>               */}
+                        </div> 
+                        </div>              
                         <div>                            
                         </div>
                     </div>

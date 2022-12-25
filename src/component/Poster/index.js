@@ -5,6 +5,7 @@ import poster2 from './../../assets/img/poster/main2.jpg'
 import "slick-carousel/slick/slick.css"; 
 import "slick-carousel/slick/slick-theme.css";
 import Slider from 'react-slick';
+import { useTranslation } from "react-i18next";
 
 const Poster = () => {
   const settings = {
@@ -19,6 +20,9 @@ const Poster = () => {
     slidesToScroll: 1
   };
 
+  const { t } = useTranslation();
+
+
   return (
     <div className='posterContainer'>
       <div className='poster'>  
@@ -28,12 +32,13 @@ const Poster = () => {
               <div>
                 <h1><span>Dana</span> Kerwen</h1>
                 <p>Fugiat ex reprehenderit duis duis sunt. Id non id pariatur tempor id. Nisi do sit aute minim non nulla mollit et sit ad. Ea cillum magna laboris voluptate nostrud anim labore tempor. Aliquip aute irure veniam voluptate elit nostrud aute mollit pariatur. Esse adipisicing aliqua laboris elit officia anim proident aliquip sunt minim.</p>                
-                <button>Learn More</button>
+                <button>{t('name.test')}</button>
               </div>
               <div></div>
             </div>
             <img src={poster1} alt="posterImg"/>
           </div>
+
           <div className='posterImg'>
             <div className='posterContent'>
               <div>

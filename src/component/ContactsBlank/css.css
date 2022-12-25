@@ -1,0 +1,14 @@
+.contactsBlank>div{
+    overflow: hidden;
+    height: 280px;
+    position: relative;
+    overflow: hidden;
+    border-radius: 6px;
+    cursor: pointer;
+}
+.contactsBlank>div>img{
+    width: 100%;
+    position: absolute;
+    /* height: 100%; */
+    top: -70px;
+}

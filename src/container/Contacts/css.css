@@ -1,0 +1,12 @@
+.contacts{
+    background-color: var(--bg);
+    color: var(--white);
+}
+.contacts>div{
+    display: flex;
+    flex-wrap: nowrap;
+    padding: 50px 0px;
+}
+.contacts>div>div{
+    flex: 1;
+}

@@ -1,0 +1,20 @@
+.contactsDetails>h2{
+    /* font-weight: normal; */
+    margin-bottom: 5px;
+    margin-top: 0px;
+    font-size: 32px;
+}
+.contactsDetails>ul{
+    list-style: none;
+    padding: 0px;
+}
+.contactsDetails>ul>li{
+    display: flex;
+    align-items: center;
+    margin-bottom: 25px;
+    color: #acacac;
+    font-size: 14px;
+}
+.contactsDetails>ul>li>svg{
+    margin-right: 15px;
+}

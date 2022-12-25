@@ -27,7 +27,7 @@ const News = () => {
         const slicedNews = news && news.slice(0, 5);
         return slicedNews && slicedNews.map((elem, i)=>{
             return(
-                <div key={i}>
+                <div key={i} onClick={()=>{navigate(`/news/${elem.news.id}`)}}>
                     <NewsComponent color="#fff" date={elem.news.date} text={elem.title}/>
                 </div> 
             )

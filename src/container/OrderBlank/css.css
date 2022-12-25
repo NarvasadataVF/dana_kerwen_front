@@ -1,9 +1,10 @@
 .orderBlank{
     background-image: url(./../../assets//img//OrderBlank.jpg);
-    background-size: cover;
+    background-size: 100%;
     background-repeat: no-repeat;
     position: relative;
     padding: 30px 0px;
+    background-attachment: fixed;
 }
 .orderBlank::before{
     background-color: rgba(0, 0, 0, 0.800);
@@ -55,6 +56,9 @@
     margin-bottom: 0px;
     margin-top: 0px;
     font-size: 50px;
+}
+.orderText>h1>span{
+    color: var(--green);
 }
 .orderText>p{
     max-width: 500px;

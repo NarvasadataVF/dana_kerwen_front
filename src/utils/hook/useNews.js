@@ -5,9 +5,13 @@ const useNews = () => {
   const [news, setNews] = useState()
 
   const getData = async(setFunc) => {
-    const response = await getNews()
+    try{
+      const response = await getNews()
 
-    setFunc(response.data)
+      setFunc(response.data)
+    }catch(err){
+      console.log(err)
+    }
   }
 
   useEffect(()=>{

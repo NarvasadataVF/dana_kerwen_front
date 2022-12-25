@@ -44,7 +44,7 @@ const Footer = () => {
         </div>
     </div>
     <div className='footerBottomLine'>
-        <p>© Dana Kerwen HJ - All right reserved.</p>
+        <p>© Dana Kerwen HJ - All rights reserved.</p>
     </div>
     </>
   )

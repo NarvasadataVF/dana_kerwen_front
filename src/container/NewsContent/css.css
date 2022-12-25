@@ -1,0 +1,27 @@
+.newsContent{
+    padding: 50px 0px;
+}
+.newsContent>div>h1{
+    font-size: 30px;
+    margin: 0px;
+    margin-top: 15px;
+    font-weight: normal;
+    font-weight: 600;
+}
+.newsContent>div>div>p{
+    font-size: 14px;
+    margin-top: 10px;
+    color: rgba(0, 0, 0, 0.85);
+}
+.newsDate{
+    color: #7b7b7b;
+    margin-top: 0px;
+    margin-bottom: 5px
+}
+
+.newsImg{
+    width: 100%;
+}
+.newsImg>img{
+    width: 100%;
+}

@@ -6,7 +6,7 @@ const OrderBlank = () => {
     <div className='orderBlank ContainerXl'>
         <div>
             <div className='orderText'>
-                <h1>Закажите перевозку груза</h1>
+                <h1>Закажите <span>перевозку</span> груза</h1>
                 <p>Dolor magna proident reprehender elit mollit in commodo pariatur ut do excepteur laborum irure pariatur anim consequat.it et fugiat ad enim exercitation.</p>
             </div>
             <div>

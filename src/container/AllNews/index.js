@@ -1,5 +1,5 @@
 import React, { useMemo } from 'react'
-import NewsHeader from '../../component/NewsHeader'
+import PageHeader from '../../component/PageHeader'
 import './css.css'
 import useNews from './../../utils/hook/useNews'
 import NewsComponent from './../../component/NewsComponent'
@@ -22,7 +22,7 @@ const AllNews = () => {
 
   return (
     <div className='allNews'>
-        <NewsHeader />
+        <PageHeader content={"Новости и события"}/>
         <div className='ContainerXl'>
           <div className='newsHub'>
             {renderNews}
